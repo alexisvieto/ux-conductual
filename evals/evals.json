@@ -1,0 +1,117 @@
+{
+  "skill_name": "ux-conductual",
+  "description": "Casos para comprobar que la skill detecta los problemas que debe detectar. Cada caso trae el prompt, el material a revisar y lo que una buena respuesta tiene que incluir.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "formulario-sin-feedback",
+      "prompt": "Revisa este formulario de registro.",
+      "input": "<form><input placeholder=\"Nombre\"><input placeholder=\"Correo\"><input placeholder=\"Teléfono\"><button>Enviar</button></form> (el botón no se deshabilita al enviar; los errores salen todos juntos arriba al final)",
+      "expected": [
+        "Entrega la tabla de auditoría con principio, severidad, dónde y arreglo",
+        "Señala que el placeholder no sustituye a la etiqueta",
+        "Señala la falta de estado de carga y el riesgo de doble envío",
+        "Recomienda validar al salir de cada campo y mostrar el error junto al campo",
+        "Recomienda type/inputmode/autocomplete correctos"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "estado-vacio-mudo",
+      "prompt": "La pantalla de pedidos muestra 'No hay datos' cuando no hay nada. ¿Está bien?",
+      "input": "",
+      "expected": [
+        "Distingue primer uso, todo resuelto, filtro sin resultados y error de carga",
+        "Propone un estado vacío que enseña el siguiente paso con su botón"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "confirmshaming",
+      "prompt": "Revisa este modal de suscripción.",
+      "input": "Modal: '¡Recibe 20% de descuento!' [Suscribirme] y debajo un enlace pequeño gris: 'No gracias, prefiero pagar precio completo'",
+      "expected": [
+        "Identifica confirmshaming",
+        "Lo califica con severidad 4",
+        "Propone un rechazo neutro con peso visual comparable"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "borrado-sin-contexto",
+      "prompt": "Al borrar un cliente sale '¿Seguro?' con Aceptar y Cancelar. ¿Lo mejoramos?",
+      "input": "",
+      "expected": [
+        "Propone confirmación con contexto (qué se borra y qué efecto tiene)",
+        "El botón nombra la acción en lugar de 'Aceptar'",
+        "Menciona archivar o papelera con deshacer como alternativa"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "costos-ocultos",
+      "prompt": "Audita este checkout de 4 pasos.",
+      "input": "Paso 1 carrito $40. Paso 2 datos. Paso 3 envío. Paso 4 pago: aparece 'cargo por servicio $6' y 'seguro de envío $3' premarcado.",
+      "expected": [
+        "Identifica costos ocultos y default tramposo como dark patterns, severidad 4",
+        "Pide mostrar el precio total desde el principio",
+        "Menciona el riesgo legal (prácticas comerciales desleales o similar)"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "diseno-movil-campo",
+      "prompt": "Diseña la pantalla para que un técnico en campo registre una visita desde el celular.",
+      "input": "Stack: React + Tailwind con shadcn/ui. El técnico usa una mano, con prisa y a veces bajo el sol.",
+      "expected": [
+        "Hace el Paso 0 y usa los componentes y tokens del proyecto",
+        "Acción principal fija abajo, objetivos de 44-48 px",
+        "Defaults (fecha, técnico, cliente por ubicación o recientes)",
+        "Contempla los 4 estados y el trabajo sin conexión o con conexión lenta",
+        "No depende solo del color (sol, contraste)"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "interfaz-ia",
+      "prompt": "Nuestro asistente de IA tarda 15 segundos en responder y a veces envía correos solo. ¿Qué cambiamos?",
+      "input": "",
+      "expected": [
+        "Recomienda streaming y estado del trabajo visible con opción de detener",
+        "Pide confirmar antes de enviar, mostrando exactamente qué se enviará",
+        "Menciona mostrar incertidumbre o fuentes"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "badge-inflado",
+      "prompt": "Ponemos un punto rojo en la campana para que la gente entre más seguido aunque no haya nada nuevo. ¿Buena idea?",
+      "input": "",
+      "expected": [
+        "Lo identifica como badge inflado / dark pattern",
+        "Explica que envenena el canal de notificaciones",
+        "Propone badges que reflejan pendientes reales y bajan al resolver"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "no-aplica",
+      "prompt": "Elige una paleta de colores para la marca de mi cafetería.",
+      "input": "",
+      "expected": [
+        "Reconoce que es estética de marca, fuera del alcance principal de la skill",
+        "No fuerza una auditoría conductual"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "conflicto-hick-descubrimiento",
+      "prompt": "Quiero dejar solo 3 botones en la barra y meter todo lo demás en un menú. Exportar a Excel lo usa el 40% de los usuarios cada día.",
+      "input": "",
+      "expected": [
+        "Aplica la regla de conflictos: lo frecuente no se esconde",
+        "Mantiene Exportar visible y recorta lo infrecuente"
+      ]
+    }
+  ]
+}

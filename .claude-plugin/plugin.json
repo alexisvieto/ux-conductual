@@ -1,0 +1,13 @@
+{
+  "name": "ux-conductual",
+  "version": "2.0.0",
+  "description": "Diseño conductual para interfaces: diseña y audita pantallas aplicando psicología del usuario (Hick, Fitts, carga cognitiva, Fogg, prevención de error, peak-end) con ética anti dark patterns y fuentes.",
+  "author": {
+    "name": "Alexis Vieto",
+    "url": "https://www.nexerai.io"
+  },
+  "homepage": "https://github.com/alexisvieto/ux-conductual",
+  "repository": "https://github.com/alexisvieto/ux-conductual",
+  "license": "CC-BY-4.0",
+  "keywords": ["ux", "ui", "design", "usability", "behavioral-design", "accessibility", "dark-patterns", "spanish", "claude-skill"]
+}
