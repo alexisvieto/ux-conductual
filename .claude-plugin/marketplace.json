@@ -1,5 +1,6 @@
 {
   "name": "ux-conductual",
+  "description": "Skills de diseño de producto por Alexis Vieto (Nexera): diseño conductual y auditoría de interfaces con psicología del usuario.",
   "owner": {
     "name": "Alexis Vieto",
     "url": "https://www.nexerai.io"
@@ -10,7 +11,9 @@
       "source": "./",
       "description": "Diseño conductual para interfaces: diseña y audita pantallas aplicando psicología del usuario, con ética anti dark patterns y fuentes.",
       "version": "2.0.0",
-      "author": { "name": "Alexis Vieto" },
+      "author": {
+        "name": "Alexis Vieto"
+      },
       "license": "CC-BY-4.0",
       "category": "design"
     }

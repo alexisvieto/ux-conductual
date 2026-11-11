@@ -9,5 +9,16 @@
   "homepage": "https://github.com/alexisvieto/ux-conductual",
   "repository": "https://github.com/alexisvieto/ux-conductual",
   "license": "CC-BY-4.0",
-  "keywords": ["ux", "ui", "design", "usability", "behavioral-design", "accessibility", "dark-patterns", "spanish", "claude-skill"]
+  "keywords": [
+    "ux",
+    "ui",
+    "design",
+    "usability",
+    "behavioral-design",
+    "accessibility",
+    "dark-patterns",
+    "spanish",
+    "claude-skill"
+  ],
+  "icon": ".claude-plugin/icon.png"
 }
