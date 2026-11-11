@@ -1,7 +1,7 @@
 {
   "name": "ux-conductual",
   "version": "2.0.0",
-  "description": "Diseño conductual para interfaces: diseña y audita pantallas aplicando psicología del usuario (Hick, Fitts, carga cognitiva, Fogg, prevención de error, peak-end) con ética anti dark patterns y fuentes.",
+  "description": "Behavioral UX for Claude: design and audit interfaces with user psychology (Hick, Fitts, cognitive load, Fogg, error prevention, peak-end), anti dark patterns ethics and cited research.",
   "author": {
     "name": "Alexis Vieto",
     "url": "https://www.nexerai.io"
