@@ -14,7 +14,7 @@ description: >-
   fricción", "estado vacío", "onboarding", "microcopy", "UX review", "make it
   more intuitive", "review this form/screen/flow", "reduce friction", "empty
   state", "dark patterns", "usability". No la uses para estética pura (paleta,
-  tipografía, animación de marca) ni para código sin interfaz.
+  tipografía, animación de marca) ni para código sin interfaz. Versión en inglés: behavioral-ux.
 license: CC-BY-4.0
 metadata:
   author: "Alexis Vieto · Senior Software Engineer · Nexera (nexerai.io)"

@@ -1,93 +1,99 @@
 <div align="center">
 
-# UX Conductual
+# Behavioral UX
 
-**Una skill para Claude que diseña y audita interfaces con psicología del usuario.**
+**A Claude skill that designs and audits user interfaces with behavioral psychology.**
 
-Hick, Fitts, carga cognitiva, Fogg, prevención de error, peak-end y ética anti dark patterns,<br>
-convertidos en patrones concretos, con fuentes y una auditoría que se puede accionar.
+Hick, Fitts, cognitive load, Fogg, error prevention, peak-end and anti dark patterns ethics,<br>
+turned into concrete patterns, backed by research, with audits you can act on.
 
-[![Licencia: CC BY 4.0](https://img.shields.io/badge/licencia-CC%20BY%204.0-lightgrey.svg)](LICENSE)
-![Versión](https://img.shields.io/badge/versión-2.0.0-blue)
-![Idioma](https://img.shields.io/badge/idioma-español-green)
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey.svg)](LICENSE)
+![Version](https://img.shields.io/badge/version-2.0.0-blue)
+![Languages](https://img.shields.io/badge/languages-English%20%7C%20Español-green)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-orange)
 
-[Instalación](#instalación) · [Resultados](#resultados) · [Cómo funciona](#cómo-funciona) · [English](#english)
+**English** · [Español](README.es.md)
 
-<img src="assets/demo.gif" alt="Demo: Claude audita una pantalla con la skill y la pantalla queda corregida" width="860">
+[Install](#install) · [Results](#results) · [How it works](#how-it-works)
 
-<sub>Video completo con sonido: [assets/demo.mp4](assets/demo.mp4)</sub>
+<img src="assets/demo-en.gif" alt="Demo: Claude audits a screen with the skill and the screen gets fixed" width="860">
+
+<sub>Full video with sound: [assets/demo-en.mp4](assets/demo-en.mp4)</sub>
 
 </div>
 
 ---
 
-## Qué es
+## What it is
 
-Los asistentes de código construyen pantallas que **funcionan** pero que muchas
-veces no se **entienden**: cuatro botones iguales, errores genéricos, campos que
-piden lo que el sistema ya sabe, estados vacíos mudos. **UX Conductual** le da a
-Claude el criterio de un diseñador de producto con formación en psicología del
-comportamiento.
+Coding assistants build screens that **work** but often don't **make sense**:
+four equal buttons, generic errors, fields asking for what the system already
+knows, silent empty states. **Behavioral UX** gives Claude the judgment of a
+product designer trained in behavioral psychology.
 
-Con la skill instalada, Claude:
+With the skill installed, Claude:
 
-- **Diseña** pantallas y flujos aplicando los principios de mayor palanca para
-  cada caso, con los componentes y tokens reales de tu proyecto.
-- **Audita** lo que ya existe y entrega una tabla con cada hallazgo, el
-  principio que rompe, su severidad (0–4), la línea exacta y el arreglo.
-- **Detecta dark patterns** y los marca siempre como severidad máxima, con el
-  marco legal que aplica (DSA, RGPD).
+- **Designs** screens and flows applying the highest-leverage principles for
+  each case, with your project's real components and tokens.
+- **Audits** what already exists and returns a table with each finding, the
+  principle it breaks, its severity (0–4), the exact line and the fix.
+- **Detects dark patterns** and always flags them as top severity, with the
+  legal framework that applies (DSA, GDPR).
 
-Funciona con cualquier stack (React, Vue, Svelte, Angular, SwiftUI, Compose,
-Flutter, HTML) y cualquier design system, porque primero lee los que ya usa tu
-proyecto.
+It ships as two skills with the same content: `behavioral-ux` (English) and
+`ux-conductual` (Spanish). Claude uses the one that matches your conversation.
 
-## Para qué sirve
+It works with any stack (React, Vue, Svelte, Angular, SwiftUI, Compose,
+Flutter, plain HTML) and any design system, because it reads the one your
+project already uses first.
 
-- Revisar un formulario, una pantalla o un flujo antes de lanzarlo.
-- Saber **por qué** algo "se siente difícil" y cómo arreglarlo.
-- Diseñar estados vacíos, de carga y de error que la gente entienda.
-- Escribir microcopy claro: botones, errores, confirmaciones.
-- Diseñar interfaces de IA: streaming, incertidumbre y confirmación antes de que
-  un agente actúe.
-- Asegurarte de no estar manipulando al usuario sin querer.
+## What it's for
 
-## Resultados
+- Reviewing a form, screen or flow before shipping it.
+- Understanding **why** something "feels hard to use" and how to fix it.
+- Designing empty, loading and error states people understand.
+- Writing clear microcopy: buttons, errors, confirmations.
+- Designing AI interfaces: streaming, uncertainty and confirmation before an
+  agent acts.
+- Making sure you're not manipulating users without meaning to.
 
-Le pedimos a Claude, con la skill instalada, que auditara una pantalla común de
-"Nueva factura" para el celular.
+## Results
 
-| Antes | Después |
+We asked Claude, with the skill installed, to audit a typical mobile
+"New invoice" screen.
+
+| Before | After |
 |:---:|:---:|
-| <img src="assets/antes.png" width="300" alt="Pantalla antes"> | <img src="assets/despues.png" width="300" alt="Pantalla después"> |
+| <img src="assets/before.png" width="300" alt="Screen before"> | <img src="assets/after.png" width="300" alt="Screen after"> |
 
-La auditoría encontró **19 problemas**, entre ellos **2 dark patterns**, cada uno
-con su principio, severidad, ubicación y arreglo. Un extracto:
+The audit found **19 issues**, including **2 dark patterns**, each with its
+principle, severity, location and fix. An excerpt:
 
-| # | Hallazgo | Principio | Sev. | Arreglo |
+| # | Finding | Principle | Sev. | Fix |
 |---|---|---|:---:|---|
-| 1 | Casilla premarcada que comparte los datos del cliente con terceros | Ética: default tramposo | 4 | Quitarla o dejarla desmarcada y explicada |
-| 2 | "No gracias, prefiero seguir perdiendo clientes" en 9 px gris | Ética: confirmshaming | 4 | Botón neutro "Ahora no" del mismo peso |
-| 3 | "Enviar" manda la factura sin resumen ni vista previa | Prevención de error | 3 | Resumen y botón "Enviar factura de $X a …" |
-| 5 | 4 botones iguales, ninguno es el principal | Hick / Von Restorff | 3 | Un solo primario; el resto secundario |
-| 6 | ITBMS y total tecleados a mano | Tesler / prevención | 3 | Calcularlos en vivo |
-| 8 | El placeholder hace de etiqueta | Etiqueta visible | 3 | `<label>` visible; placeholder como ejemplo |
+| 1 | Pre-checked box that shares the client's data with third parties | Ethics: sneaky default | 4 | Remove it, or leave it unchecked and explained |
+| 2 | "No thanks, I prefer to keep losing clients" in 9 px gray | Ethics: confirmshaming | 4 | A neutral "Not now" button with equal weight |
+| 3 | "Send" fires the invoice with no summary or preview | Error prevention | 3 | Summary plus a "Send $X invoice to …" button |
+| 5 | 4 equal buttons, none is the main one | Hick / Von Restorff | 3 | A single primary; the rest secondary |
+| 6 | Tax and total typed by hand | Tesler / prevention | 3 | Compute them live |
+| 8 | The placeholder acts as the label | Visible label | 3 | Visible `<label>`; placeholder as an example |
 
-Auditoría completa, tal como la entregó Claude: [demo/auditoria.md](demo/auditoria.md).
-Puedes abrir las dos pantallas: [demo/antes.html](demo/antes.html) y
-[demo/despues.html](demo/despues.html).
+Full audit: [demo/en/audit.md](demo/en/audit.md). Open both screens:
+[demo/en/before.html](demo/en/before.html) and
+[demo/en/after.html](demo/en/after.html).
 
-## Instalación
+## Install
 
-### Claude Code (recomendado)
+### Claude Code (recommended)
 
 ```
 /plugin marketplace add alexisvieto/ux-conductual
 /plugin install ux-conductual@ux-conductual
 ```
 
-### Con `npx skills` (Claude Code y otros agentes compatibles)
+This installs both skills (English and Spanish).
+
+### With `npx skills` (Claude Code and other compatible agents)
 
 ```bash
 npx skills add alexisvieto/ux-conductual
@@ -97,136 +103,109 @@ npx skills add alexisvieto/ux-conductual
 
 ```bash
 git clone https://github.com/alexisvieto/ux-conductual.git
-cp -r ux-conductual/skills/ux-conductual ~/.claude/skills/
+cp -r ux-conductual/skills/behavioral-ux ~/.claude/skills/
 ```
 
-En Windows (PowerShell):
+On Windows (PowerShell):
 
 ```powershell
 git clone https://github.com/alexisvieto/ux-conductual.git
-Copy-Item -Recurse ux-conductual\skills\ux-conductual "$env:USERPROFILE\.claude\skills\"
+Copy-Item -Recurse ux-conductual\skills\behavioral-ux "$env:USERPROFILE\.claude\skills\"
 ```
+
+For the Spanish version, copy `skills/ux-conductual` instead (or both).
 
 ### claude.ai
 
-Comprime la carpeta `skills/ux-conductual` en un `.zip` y súbela en
-**Configuración → Capacidades → Skills**.
+Zip the `skills/behavioral-ux` folder and upload it under
+**Settings → Capabilities → Skills**.
 
-## Uso
+## Usage
 
-No hace falta llamarla: Claude la activa sola cuando pides algo de UX. Ejemplos:
-
-```
-Revisa este formulario de registro.
-Esta pantalla se siente difícil, ¿por qué?
-Diseña el estado vacío de la lista de pedidos.
-Audita el checkout y dime si hay dark patterns.
-Nuestro asistente de IA tarda 15 segundos y a veces envía correos solo. ¿Qué cambiamos?
-```
-
-También funciona en inglés: *"review this screen"*, *"make it more intuitive"*.
-
-## Cómo funciona
-
-La skill sigue una disciplina fija:
-
-1. **Paso 0. Adaptarse al proyecto:** detecta el stack, el design system, los
-   tokens y los componentes antes de proponer nada. Nunca inventa paletas.
-2. **Perfilar al usuario:** quién usa la pantalla, dónde, qué quiere y qué teme.
-3. **Elegir el modo:**
-   - **DISEÑAR:** principio rector (¿qué necesita atención?, ¿cuál es la acción
-     principal?, ¿cómo sé que salió bien?), playbook del tipo de pantalla, los
-     3–4 principios de mayor palanca y los 4 estados.
-   - **AUDITAR:** tabla de hallazgos ordenada por severidad (escala de Nielsen)
-     y los 3 arreglos de mayor impacto.
-4. **Checklists:** maestro (atención, carga cognitiva, mecánica, feedback,
-   prevención, accesibilidad) y de ética.
-
-### Qué incluye
+You don't need to call it: Claude activates it when you ask for anything UX.
+Examples:
 
 ```
-skills/ux-conductual/
-├── SKILL.md                  Flujo de trabajo, modos y checklists
+Review this signup form.
+This screen feels hard to use. Why?
+Design the empty state for the orders list.
+Audit the checkout and tell me if there are dark patterns.
+Our AI assistant takes 15 seconds to answer and sometimes sends emails on its own. What should we change?
+```
+
+## How it works
+
+The skill follows a fixed discipline:
+
+1. **Step 0. Adapt to the project:** detect the stack, design system, tokens and
+   components before proposing anything. It never invents a palette.
+2. **Profile the user:** who uses the screen, where, what they want and what
+   they fear.
+3. **Pick the mode:**
+   - **DESIGN:** guiding principle (what needs attention? what's the main
+     action? how do I know it worked?), the playbook for the screen type, the
+     3–4 highest-leverage principles and the 4 states.
+   - **AUDIT:** findings table sorted by severity (Nielsen's scale) and the 3
+     highest-impact fixes.
+4. **Checklists:** master (attention, cognitive load, mechanics, feedback,
+   prevention, accessibility) and ethics.
+
+### What's inside
+
+```
+skills/behavioral-ux/         English version
+├── SKILL.md                  Workflow, modes and checklists
 ├── references/
-│   ├── principios.md         21 principios a fondo, conflictos y cómo validar
-│   ├── playbook.md           14 tipos de pantalla, incluidas interfaces de IA
-│   ├── etica.md              Dark patterns y marco legal
-│   └── fuentes.md            Estudios citados
+│   ├── principles.md         21 principles in depth, conflicts and how to validate
+│   ├── playbook.md           14 screen types, including AI interfaces
+│   ├── ethics.md             Dark patterns and legal framework
+│   └── sources.md            Studies cited
 └── examples/
-    └── antes-despues.md      Patrones de código antes y después
-evals/evals.json              10 casos de prueba con lo que se espera
-demo/                         Pantalla de ejemplo, auditoría real y corrección
+    └── before-after.md       Before and after code patterns
+skills/ux-conductual/         Spanish version, same structure
+evals/evals.json              10 test cases with expected behavior
+demo/                         Sample screen, real audit and fixed version
 ```
 
-El SKILL.md es corto a propósito: Claude solo lee las referencias cuando las
-necesita, así que la skill gasta poco contexto.
+`SKILL.md` is short on purpose: Claude only reads the references when it needs
+them, so the skill uses little context.
 
-### Principios cubiertos
+### Principles covered
 
-| Percepción y mecánica | Carga cognitiva | Motivación | Confianza y error |
+| Perception and mechanics | Cognitive load | Motivation | Trust and error |
 |---|---|---|---|
-| Hick · Fitts · Memoria de trabajo · Jakob · Gestalt · Von Restorff · Posición serial | Reconocer vs. recordar · Defaults · Progressive disclosure · Tesler | Fogg (B = MAP) · Tareas abiertas (Ovsiankina) · Progreso dotado · Gradiente de meta | Tiempos de respuesta · Feedback · Prevención de error · Reversibilidad · Framing · Peak-end · Estética-usabilidad |
+| Hick · Fitts · Working memory · Jakob · Gestalt · Von Restorff · Serial position | Recognition over recall · Defaults · Progressive disclosure · Tesler | Fogg (B = MAP) · Open tasks (Ovsiankina) · Endowed progress · Goal gradient | Response times · Feedback · Error prevention · Reversibility · Framing · Peak-end · Aesthetic-usability |
 
-### Basada en evidencia
+### Evidence-based
 
-Cada principio cita su fuente ([fuentes.md](skills/ux-conductual/references/fuentes.md)),
-y donde la evidencia está en discusión la skill lo dice. Por ejemplo, usa el
-efecto Ovsiankina en lugar del Zeigarnik, que no se ha replicado bien; cita a
-Cowan (~4 bloques) en lugar del "7 ± 2" mal aplicado; y no da una cifra fija
-para la aversión a la pérdida. Los umbrales que son heurísticas están marcados
-como tales.
+Every principle cites its source ([sources.md](skills/behavioral-ux/references/sources.md)),
+and where the evidence is debated the skill says so. For example, it uses the
+Ovsiankina effect instead of the Zeigarnik effect, which hasn't replicated well;
+it cites Cowan (~4 chunks) instead of the misapplied "7 ± 2"; and it doesn't
+give a fixed figure for loss aversion. Thresholds that are heuristics are marked
+as such.
 
 ## Evals
 
-[`evals/evals.json`](evals/evals.json) trae 10 casos con el prompt, el material
-y lo que una buena respuesta debe incluir: formularios sin feedback,
-confirmshaming, costos ocultos, borrado sin contexto, interfaces de IA, un
-conflicto entre principios y un caso fuera de alcance. Sirven para comprobar que
-la skill hace lo que promete y para medir cambios futuros.
+[`evals/evals.json`](evals/evals.json) contains 10 cases with the prompt, the
+material and what a good answer must include: forms without feedback,
+confirmshaming, hidden costs, deletion without context, AI interfaces, a
+conflict between principles and an out-of-scope case. Use them to check the
+skill does what it promises and to measure future changes.
 
-## Contribuir
+## Contributing
 
-Las contribuciones son bienvenidas: principios con buena evidencia, nuevos tipos
-de pantalla, ejemplos, evals o una traducción. Lee
-[CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions are welcome: well-evidenced principles, new screen types,
+examples, evals or translations. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Autor
+## Author
 
 **Alexis Vieto** · Senior Software Engineer · [Nexera](https://www.nexerai.io)
 
-Nexera diseña, construye y opera agentes de IA y software para empresas de
-Latinoamérica desde Panamá.
+Nexera designs, builds and runs AI agents and software for companies in Latin
+America, from Panama.
 
-## Licencia
+## License
 
-[CC BY 4.0](LICENSE): puedes usarla, adaptarla y compartirla, también con fines
-comerciales, siempre que des crédito al autor.
-
----
-
-## English
-
-**UX Conductual** ("behavioral UX") is a Claude skill that designs and audits
-user interfaces using behavioral psychology: Hick, Fitts, cognitive load, Jakob,
-Gestalt, recognition over recall, smart defaults, progressive disclosure, Fogg's
-B = MAP, response-time limits, error prevention, reversibility, framing,
-peak-end and anti dark patterns ethics, all backed by cited research.
-
-- **Two modes.** DESIGN builds screens with your project's real components and
-  tokens. AUDIT returns a table of findings with the principle, Nielsen
-  severity (0–4), exact location and fix.
-- **Stack-agnostic.** It reads your design system first and never invents a
-  palette.
-- **Real result.** In the demo above, it found 19 issues, including 2 dark
-  patterns, in a typical mobile invoice screen.
-
-The content is in Spanish, and Claude applies it in whatever language you write
-in.
-
-```
-/plugin marketplace add alexisvieto/ux-conductual
-/plugin install ux-conductual@ux-conductual
-```
-
-Licensed under CC BY 4.0. By Alexis Vieto, Senior Software Engineer at
-[Nexera](https://www.nexerai.io).
+[CC BY 4.0](LICENSE): you can use, adapt and share it, including commercially,
+as long as you credit the author.

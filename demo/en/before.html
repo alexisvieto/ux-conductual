@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New invoice (before)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, sans-serif; background: #f2f2f2; color: #333; }
+  .app { width: 390px; min-height: 844px; margin: 0 auto; background: #fff; padding: 14px; }
+  h1 { font-size: 15px; margin: 4px 0 12px; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .top a { font-size: 11px; color: #999; }
+  input, select { width: 100%; padding: 7px; margin: 3px 0; border: 1px solid #ccc; font-size: 13px; }
+  .row { display: flex; gap: 4px; }
+  .btns { display: flex; gap: 4px; margin-top: 8px; }
+  .btn { flex: 1; padding: 7px 4px; font-size: 12px; border: 0; color: #fff; }
+  .b1 { background: #2e7d32; } .b2 { background: #1565c0; } .b3 { background: #c62828; } .b4 { background: #ef6c00; }
+  .err { background: #c62828; color: #fff; font-size: 12px; padding: 6px; margin-bottom: 8px; }
+  .chk { font-size: 11px; color: #777; margin: 8px 0; }
+  .list { margin-top: 16px; border-top: 1px solid #eee; padding-top: 10px; font-size: 12px; color: #aaa; text-align: center; }
+  .promo { margin-top: 14px; background: #fff3e0; padding: 10px; font-size: 12px; }
+  .promo button { background: #ef6c00; color: #fff; border: 0; padding: 6px 10px; font-size: 12px; }
+  .promo small { display: block; margin-top: 6px; color: #bbb; font-size: 9px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><h1>NEW INVOICE</h1><a href="#">help</a></div>
+  <div class="err">Error: invalid input</div>
+  <input placeholder="Client">
+  <input placeholder="Tax ID">
+  <input placeholder="Client email">
+  <input placeholder="Phone">
+  <input placeholder="Date (mm/dd/yyyy)">
+  <input placeholder="Due date">
+  <input placeholder="Description">
+  <div class="row"><input placeholder="Quantity"><input placeholder="Price"></div>
+  <input placeholder="Sales tax">
+  <input placeholder="Total">
+  <select><option>Currency</option><option>USD</option><option>EUR</option></select>
+  <div class="chk"><input type="checkbox" checked style="width:auto"> Send a copy to our business partners</div>
+  <div class="btns">
+    <button class="btn b1">Save</button>
+    <button class="btn b2">Send</button>
+    <button class="btn b3">Delete</button>
+    <button class="btn b4">PDF</button>
+  </div>
+  <div class="list">No data</div>
+  <div class="promo">Go Pro and invoice without limits! <button>I want Pro</button>
+    <small>No thanks, I prefer to keep losing clients</small></div>
+</div>
+</body>
+</html>

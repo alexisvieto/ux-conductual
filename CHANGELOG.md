@@ -4,6 +4,8 @@
 
 Primera versión pública.
 
+- **Bilingüe**: skill en inglés (`behavioral-ux`) además de la española (`ux-conductual`); README principal en inglés y `README.es.md`; demo, auditoría y video en ambos idiomas.
+
 - **Estructura**: SKILL.md corto con el flujo de trabajo; el detalle vive en `references/` y se carga solo cuando hace falta.
 - **Dos modos**: DISEÑAR y AUDITAR. La auditoría entrega una tabla fija con principio, severidad (escala de Nielsen 0–4), ubicación y arreglo.
 - **Rigor**: Fogg actualizado a B = MAP; Zeigarnik reformulado como tareas abiertas (Ovsiankina) por la evidencia de replicación; memoria de trabajo con Cowan (~4 bloques); aversión a la pérdida sin la cifra fija de 2×; tamaños táctiles con WCAG 2.2, Apple y Material; umbrales marcados como heurísticas.

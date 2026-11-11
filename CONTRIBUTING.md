@@ -33,3 +33,9 @@ confiable, cada aporte cumple tres reglas.
 
 Al contribuir aceptas que tu aporte se publique bajo la licencia
 [CC BY 4.0](LICENSE).
+
+## Two languages
+
+The skill exists in English (`skills/behavioral-ux`) and Spanish
+(`skills/ux-conductual`). A content change should land in both; if you can only
+write one language, say so in the PR and a maintainer will port it.

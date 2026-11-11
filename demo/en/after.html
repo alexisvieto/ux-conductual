@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New invoice (after)</title>
+<style>
+  :root { --ink: #14171c; --muted: #5d6570; --line: #dfe3e8; --bg: #f5f6f8; --primary: #1f3fbf; --ok: #1b7a3d; --danger: #b3261e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #e9ebef; color: var(--ink); }
+  .app { position: relative; width: 100%; max-width: 390px; min-height: 844px; margin: 0 auto; background: var(--bg); padding: 18px 18px 110px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  header a { font-size: 22px; color: var(--ink); text-decoration: none; }
+  h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
+  .card { background: #fff; border-radius: 16px; padding: 14px; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+  .card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 10px 0 5px; }
+  label:first-of-type { margin-top: 0; }
+  input, select { width: 100%; height: 46px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; font-size: 16px; background: #fff; color: var(--ink); }
+  .cli { display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; }
+  .cli b { font-size: 15px; } .cli small { display: block; color: var(--muted); font-size: 12px; }
+  .cli span { margin-left: auto; color: var(--primary); font-size: 13px; font-weight: 600; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 5px; }
+  .field-err input { border-color: var(--danger); }
+  .field-err .msg { color: var(--danger); font-size: 13px; margin-top: 5px; }
+  .tot { display: grid; grid-template-columns: 1fr auto; gap: 6px; font-size: 14px; color: var(--muted); }
+  .tot b { color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
+  .tot .big { font-size: 17px; color: var(--ink); font-weight: 700; border-top: 1px solid var(--line); padding-top: 8px; margin-top: 2px; }
+  .chk { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); }
+  .chk input { width: 22px; height: 22px; margin: 0; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 18px 24px; background: rgba(245,246,248,.94); border-top: 1px solid var(--line); backdrop-filter: blur(8px); }
+  .bar .sum { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .bar .sum b { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .primary { width: 100%; height: 52px; border: 0; border-radius: 14px; background: var(--primary); color: #fff; font-size: 16px; font-weight: 700; }
+  .sec { display: flex; justify-content: center; gap: 22px; margin-top: 8px; }
+  .sec button { background: none; border: 0; font-size: 14px; color: var(--primary); font-weight: 600; padding: 8px 4px; min-height: 44px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header><a href="#" aria-label="Back">←</a><h1>New invoice</h1></header>
+
+  <section class="card">
+    <h2>Client</h2>
+    <div class="cli"><div><b>Sunrise Hardware</b><small>Tax ID 84-1234567 · ana@sunrise.com</small></div><span>Change</span></div>
+  </section>
+
+  <section class="card">
+    <h2>Details</h2>
+    <label for="desc">Description</label>
+    <input id="desc" value="Equipment maintenance · November">
+    <div class="row">
+      <div><label for="cant">Quantity</label><input id="cant" inputmode="numeric" value="2"></div>
+      <div class="field-err"><label for="pre">Unit price</label><input id="pre" inputmode="decimal" value="85,," aria-invalid="true" aria-describedby="pre-msg"><p class="msg" id="pre-msg" role="alert">Enter the price in numbers, e.g. 85.00</p></div>
+    </div>
+    <div class="row">
+      <div><label for="fec">Date</label><input id="fec" type="date" value="2026-11-11"></div>
+      <div><label for="ven">Due</label><select id="ven"><option>In 30 days</option><option>In 15 days</option><option>On receipt</option></select></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Total</h2>
+    <div class="tot"><span>Subtotal</span><b>$170.00</b><span>Sales tax 7%</span><b>$11.90</b><span class="big">Total</span><b class="big">$181.90</b></div>
+    <p class="hint">Calculated automatically · USD</p>
+  </section>
+
+  <section class="card">
+    <label class="chk"><input type="checkbox"> Email me a copy</label>
+  </section>
+
+  <div class="bar">
+    <div class="sum"><span>Will be sent to ana@sunrise.com</span><b>$181.90</b></div>
+    <button class="primary">Send invoice · $181.90</button>
+    <div class="sec"><button>Save draft</button><button>Preview PDF</button></div>
+  </div>
+</div>
+</body>
+</html>
