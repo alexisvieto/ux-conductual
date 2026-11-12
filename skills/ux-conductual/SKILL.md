@@ -4,16 +4,15 @@ description: >-
   Diseño conductual para cualquier interfaz: psicología del usuario aplicada a
   pantallas, formularios, flujos, estados (vacío, carga, error), notificaciones,
   microcopy, jerarquía visual e interfaces de IA, en cualquier stack y design
-  system. Dos modos: DISEÑAR (construir aplicando los principios) y AUDITAR
+  system. Dos modos: DISEÑAR y AUDITAR
   (tabla de hallazgos con principio, severidad, ubicación y arreglo). Traduce
   Hick, Fitts, carga cognitiva, Jakob, Gestalt, reconocer-vs-recordar, defaults,
   progressive disclosure, Fogg (B=MAP), tiempos de respuesta, prevención de
   error, reversibilidad, framing, peak-end y ética anti dark patterns a patrones
   concretos con fuentes. Úsala al diseñar, revisar o mejorar una UI: "revisa este
   formulario", "esto se siente difícil", "hazlo más intuitivo", "reducir
-  fricción", "estado vacío", "onboarding", "microcopy", "UX review", "make it
-  more intuitive", "review this form/screen/flow", "reduce friction", "empty
-  state", "dark patterns", "usability". No la uses para estética pura (paleta,
+  fricción", "estado vacío", "onboarding", "microcopy", "UX review", "review
+  this form", "dark patterns", "usability". No la uses para estética pura (paleta,
   tipografía, animación de marca) ni para código sin interfaz. Versión en inglés: behavioral-ux.
 license: CC-BY-4.0
 metadata:
