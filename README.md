@@ -200,7 +200,7 @@ examples, evals or translations. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Author
 
-**Alexis Vieto** · Senior Software Engineer · [Nexera](https://www.nexerai.io)
+**Alexis Vieto** · Senior Software Engineer · [Nexera](https://www.nexerai.io) · [@alexisvieto on X](https://x.com/alexisvieto)
 
 Nexera designs, builds and runs AI agents and software for companies in Latin
 America, from Panama.

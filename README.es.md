@@ -195,7 +195,7 @@ de pantalla, ejemplos, evals o una traducción. Lee
 
 ## Autor
 
-**Alexis Vieto** · Senior Software Engineer · [Nexera](https://www.nexerai.io)
+**Alexis Vieto** · Senior Software Engineer · [Nexera](https://www.nexerai.io) · [@alexisvieto en X](https://x.com/alexisvieto)
 
 Nexera diseña, construye y opera agentes de IA y software para empresas de
 Latinoamérica desde Panamá.
